@@ -1,0 +1,22 @@
+# example docker-compose file
+version: '3'
+services:
+  bird:
+    image: liske/bird
+    cap_add:
+      - NET_ADMIN
+      - NET_BROADCAST
+      - NET_RAW
+    network_mode: host
+    volumes:
+      - /path/to/config:/etc/bird:ro
+
+  bird6:
+    image: liske/bird6
+    cap_add:
+      - NET_ADMIN
+      - NET_BROADCAST
+      - NET_RAW
+    network_mode: host
+    volumes:
+      - /path/to/config:/etc/bird:ro
