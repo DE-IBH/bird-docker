@@ -1,13 +1,15 @@
 # The BIRD Internet Routing Daemon
 
 These are docker images for [bird](http://bird.network.cz/) based on the offical Debian package:
-- **liske/bird4** - IPv4 version of bird
-- **liske/bird6** - IPv6 version of bird
+- **liske/bird4** - IPv4 version of BIRD
+- **liske/bird6** - IPv6 version of BIRD
+
+For monitoring see also [BIRD Internet Routing Daemon Check](https://github.com/liske/bird-docker/blob/master/Check_MK.md).
 
 
 ## Tagged Docker Images
 
-Images are tagged according to the installed bird version. The images are based on official Debain GNU/Linux releases.
+Images are tagged according to the installed BIRD version. The images are based on official Debain GNU/Linux releases.
 
 ### bird4
 
@@ -30,7 +32,7 @@ Images are tagged according to the installed bird version. The images are based 
 $ docker run --rm --net=host --uts=host --cap-add=NET_ADMIN --cap-add=NET_BROADCAST --cap-add=NET_RAW -v /path/to/config:/etc/bird:ro liske/bird4
 ```
 
-The command is used as options for bird (which is already the entrypoint).
+The command is used as options for BIRD (which is already the entrypoint).
 
 ```
 # docker-compose.yml example
@@ -44,7 +46,7 @@ services:
       - NET_RAW
     network_mode: host
     volumes:
-      - /path/to/config:/etc/bird:ro
+      - /path/to/config4:/etc/bird:ro
 
   bird6:
     image: liske/bird6
@@ -54,5 +56,5 @@ services:
       - NET_RAW
     network_mode: host
     volumes:
-      - /path/to/config:/etc/bird:ro
+      - /path/to/config6:/etc/bird:ro
 ```
