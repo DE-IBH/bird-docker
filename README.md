@@ -4,8 +4,6 @@ These are docker images for [bird](http://bird.network.cz/) based on the offical
 - **liske/bird4** - IPv4 version of BIRD
 - **liske/bird6** - IPv6 version of BIRD
 
-For monitoring see also [BIRD Internet Routing Daemon Check](https://github.com/liske/bird-docker/blob/master/Check_MK.md).
-
 
 ## Tagged Docker Images
 
@@ -57,4 +55,33 @@ services:
     network_mode: host
     volumes:
       - /path/to/config6:/etc/bird:ro
+```
+
+### CLI
+
+To use the CLI from outside you could use two following wrapper scripts. This also allows the usage of the [BIRD Internet Routing Daemon Check](https://github.com/liske/bird-docker/blob/master/Check_MK.md) plugin for Check_MK on the host.
+
+
+- `/usr/local/bin/birdc`
+
+```
+#!/bin/bash
+
+if [ -t 0 ]; then
+    exec docker exec -it bird_bird4_1 birdc $@
+else
+    exec docker exec -i bird_bird4_1 birdc $@
+fi
+```
+
+- `/usr/local/bin/birdc6`
+
+```
+#!/bin/bash
+
+if [ -t 0 ]; then
+    exec docker exec -it bird_bird6_1 birdc6 $@
+else
+    exec docker exec -i bird_bird6_1 birdc6 $@
+fi
 ```
