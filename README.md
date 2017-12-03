@@ -1,8 +1,8 @@
 # The BIRD Internet Routing Daemon
 
 These are docker images for [bird](http://bird.network.cz/) based on the offical Debian package:
-- **liske/bird4** - IPv4 version of BIRD
-- **liske/bird6** - IPv6 version of BIRD
+- **ibhde/bird4** - IPv4 version of BIRD
+- **ibhde/bird6** - IPv6 version of BIRD
 
 
 ## Tagged Docker Images
@@ -11,23 +11,23 @@ Images are tagged according to the installed BIRD version. The images are based 
 
 ### bird4
 
-* [`1.6.3`, `latest` Dockerfile](https://github.com/liske/bird-docker/blob/master/bird4-1.6.3-debian/Dockerfile)
+* [`1.6.3`, `latest` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird4-1.6.3-debian/Dockerfile)
 
-  [![Layers](https://images.microbadger.com/badges/image/liske/bird4:1.6.3.svg)](https://images.microbadger.com/badges/image/liske/bird4:1.6.3)
+  [![Layers](https://images.microbadger.com/badges/image/ibhde/bird4:1.6.3.svg)](https://images.microbadger.com/badges/image/ibhde/bird4:1.6.3)
   This image is build using *Debian stretch* and should be considered **stable**.
 
 ### bird6
 
-* [`1.6.3`, `latest` Dockerfile](https://github.com/liske/bird-docker/blob/master/bird6-1.6.3-debian/Dockerfile)
+* [`1.6.3`, `latest` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird6-1.6.3-debian/Dockerfile)
 
-  [![Layers](https://images.microbadger.com/badges/image/liske/bird6:1.6.3.svg)](https://images.microbadger.com/badges/image/liske/bird6:1.6.3)
+  [![Layers](https://images.microbadger.com/badges/image/ibhde/bird6:1.6.3.svg)](https://images.microbadger.com/badges/image/ibhde/bird6:1.6.3)
   This image is build using *Debian stretch* and should be considered **stable**.
 
 
 ## Usage
 
 ```
-$ docker run --rm --net=host --uts=host --cap-add=NET_ADMIN --cap-add=NET_BROADCAST --cap-add=NET_RAW -v /path/to/config:/etc/bird:ro liske/bird4
+$ docker run --rm --net=host --uts=host --cap-add=NET_ADMIN --cap-add=NET_BROADCAST --cap-add=NET_RAW -v /path/to/config:/etc/bird:ro ibhde/bird4
 ```
 
 The command is used as options for BIRD (which is already the entrypoint).
@@ -37,7 +37,7 @@ The command is used as options for BIRD (which is already the entrypoint).
 version: '3'
 services:
   bird4:
-    image: liske/bird4
+    image: ibhde/bird4
     cap_add:
       - NET_ADMIN
       - NET_BROADCAST
@@ -47,7 +47,7 @@ services:
       - /path/to/config4:/etc/bird:ro
 
   bird6:
-    image: liske/bird6
+    image: ibhde/bird6
     cap_add:
       - NET_ADMIN
       - NET_BROADCAST
@@ -59,7 +59,7 @@ services:
 
 ### CLI
 
-To use the CLI from outside you could use two following wrapper scripts. This also allows the usage of the [BIRD Internet Routing Daemon Check](https://github.com/liske/bird-docker/blob/master/Check_MK.md) plugin for Check_MK on the host.
+To use the CLI from outside you could use two following wrapper scripts. This also allows the usage of the [BIRD Internet Routing Daemon Check](https://github.com/DE-IBH/bird-docker/blob/master/Check_MK.md) plugin for Check_MK on the host.
 
 
 - `/usr/local/bin/birdc`
