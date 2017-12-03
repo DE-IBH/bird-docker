@@ -2,7 +2,7 @@
 version: '3'
 services:
   bird:
-    image: liske/bird
+    image: ibhde/bird4
     cap_add:
       - NET_ADMIN
       - NET_BROADCAST
@@ -12,7 +12,7 @@ services:
       - /path/to/config:/etc/bird:ro
 
   bird6:
-    image: liske/bird6
+    image: ibhde/bird6
     cap_add:
       - NET_ADMIN
       - NET_BROADCAST
