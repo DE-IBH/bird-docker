@@ -11,14 +11,24 @@ Images are tagged according to the installed BIRD version. The images are based 
 
 ### bird4
 
-* [`1.6.3`, `latest` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird4-1.6.3-debian/Dockerfile)
+* [`1.6.6`, `latest` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird4-1.6.6-debian/Dockerfile)
+
+  [![Layers](https://images.microbadger.com/badges/image/ibhde/bird4:1.6.6.svg)](https://images.microbadger.com/badges/image/ibhde/bird4:1.6.6)
+  This image is build using *Debian buster* and should be considered **stable**.
+
+* [`1.6.3` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird4-1.6.3-debian/Dockerfile)
 
   [![Layers](https://images.microbadger.com/badges/image/ibhde/bird4:1.6.3.svg)](https://images.microbadger.com/badges/image/ibhde/bird4:1.6.3)
   This image is build using *Debian stretch* and should be considered **stable**.
 
 ### bird6
 
-* [`1.6.3`, `latest` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird6-1.6.3-debian/Dockerfile)
+* [`1.6.6`, `latest` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird6-1.6.6-debian/Dockerfile)
+
+  [![Layers](https://images.microbadger.com/badges/image/ibhde/bird6:1.6.6.svg)](https://images.microbadger.com/badges/image/ibhde/bird6:1.6.6)
+  This image is build using *Debian buster* and should be considered **stable**.
+
+* [`1.6.3` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird6-1.6.3-debian/Dockerfile)
 
   [![Layers](https://images.microbadger.com/badges/image/ibhde/bird6:1.6.3.svg)](https://images.microbadger.com/badges/image/ibhde/bird6:1.6.3)
   This image is build using *Debian stretch* and should be considered **stable**.
