@@ -11,7 +11,12 @@ Images are tagged according to the installed BIRD version. The images are based 
 
 ### bird4
 
-* [`1.6.6`, `latest` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird4-1.6.6-debian/Dockerfile)
+* [`1.6.8`, `latest` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird4-1.6.8-debian/Dockerfile)
+
+  [![Layers](https://images.microbadger.com/badges/image/ibhde/bird4:1.6.8.svg)](https://images.microbadger.com/badges/image/ibhde/bird4:1.6.8)
+  This image is build using *Debian bullseye* and should be considered **stable**.
+
+* [`1.6.6`, Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird4-1.6.6-debian/Dockerfile)
 
   [![Layers](https://images.microbadger.com/badges/image/ibhde/bird4:1.6.6.svg)](https://images.microbadger.com/badges/image/ibhde/bird4:1.6.6)
   This image is build using *Debian buster* and should be considered **stable**.
@@ -23,7 +28,12 @@ Images are tagged according to the installed BIRD version. The images are based 
 
 ### bird6
 
-* [`1.6.6`, `latest` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird6-1.6.6-debian/Dockerfile)
+* [`1.6.8`, `latest` Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird6-1.6.8-debian/Dockerfile)
+
+  [![Layers](https://images.microbadger.com/badges/image/ibhde/bird6:1.6.8.svg)](https://images.microbadger.com/badges/image/ibhde/bird6:1.6.8)
+  This image is build using *Debian bullseye* and should be considered **stable**.
+
+* [`1.6.6`, Dockerfile](https://github.com/DE-IBH/bird-docker/blob/master/bird6-1.6.6-debian/Dockerfile)
 
   [![Layers](https://images.microbadger.com/badges/image/ibhde/bird6:1.6.6.svg)](https://images.microbadger.com/badges/image/ibhde/bird6:1.6.6)
   This image is build using *Debian buster* and should be considered **stable**.
@@ -54,7 +64,7 @@ services:
       - NET_RAW
     network_mode: host
     volumes:
-      - /path/to/config4:/etc/bird:ro
+      - /path/to/conf.d:/etc/bird:ro
 
   bird6:
     image: ibhde/bird6
@@ -64,12 +74,12 @@ services:
       - NET_RAW
     network_mode: host
     volumes:
-      - /path/to/config6:/etc/bird:ro
+      - /path/to/conf.d:/etc/bird:ro
 ```
 
 ### CLI
 
-To use the CLI from outside you could use two following wrapper scripts. This also allows the usage of the [BIRD Internet Routing Daemon Check](https://github.com/DE-IBH/bird-docker/blob/master/Check_MK.md) plugin for Check_MK on the host.
+To use the CLI from outside you could use two following wrapper scripts. This also allows the usage of the [BIRD Internet Routing Daemon Check](https://github.com/freddy36/check_mk_extensions/tree/master/bird) plugin for *CheckMK* on the host.
 
 
 - `/usr/local/bin/birdc`
